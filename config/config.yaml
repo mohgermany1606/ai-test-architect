@@ -1,0 +1,9 @@
+browser:
+  name: chromium
+  headless: false
+
+application:
+  url: https://wikipedia.org
+
+screenshot:
+  path: screenshots

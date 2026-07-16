@@ -1,0 +1,314 @@
+2026-07-16 11:15:04,051 | INFO | Sending prompt to LLM
+2026-07-16 11:15:04,051 | INFO | 
+
+You are a Senior QA Architect.
+
+Analyze the requirement below.
+
+Generate detailed test cases.
+
+Requirement:
+
+
+User can search Wikipedia for Artificial Intelligence.
+
+
+Return ONLY JSON.
+
+Format:
+
+[
+ {
+   "test_id": "",
+   "title": "",
+   "steps": [],
+   "expected_result": ""
+ }
+]
+
+
+2026-07-16 11:15:10,754 | INFO | HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2026-07-16 11:15:10,826 | INFO | LLM response received
+2026-07-16 11:15:10,826 | INFO | [
+  {
+    "test_id": "TC_001",
+    "title": "Search for 'Artificial Intelligence' using valid input",
+    "steps": [
+      "Navigate to the search input field.",
+      "Enter the keyword 'Artificial Intelligence'.",
+      "Click the search button or press the Enter key."
+    ],
+    "expected_result": "Wikipedia displays the search results for 'Artificial Intelligence', showing a relevant article at the top of the results."
+  },
+  {
+    "test_id": "TC_002",
+    "title": "Search result link navigation",
+    "steps": [
+      "Complete a search for 'Artificial Intelligence'.",
+      "Click on the top result link."
+    ],
+    "expected_result": "User is navigated to the 'Artificial Intelligence' article page."
+  },
+  {
+    "test_id": "TC_003",
+    "title": "Verify search result contains summary for 'Artificial Intelligence'",
+    "steps": [
+      "Search for 'Artificial Intelligence'."
+    ],
+    "expected_result": "Search results include a summary or snippet describing 'Artificial Intelligence'."
+  },
+  {
+    "test_id": "TC_004",
+    "title": "Handle case insensitivity in search input",
+    "steps": [
+      "Enter 'artificial intelligence' (all lowercase) in the search box.",
+      "Initiate the search."
+    ],
+    "expected_result": "Results are the same as searching with 'Artificial Intelligence' (title case); case does not affect the search outcome."
+  },
+  {
+    "test_id": "TC_005",
+    "title": "Trim whitespace in search query",
+    "steps": [
+      "Enter '  Artificial Intelligence  ' (with leading and trailing spaces) in the search box.",
+      "Initiate the search."
+    ],
+    "expected_result": "Search results returned ignore the leading and trailing spaces and display the correct results for 'Artificial Intelligence'."
+  },
+  {
+    "test_id": "TC_006",
+    "title": "No results for non-matching query",
+    "steps": [
+      "Enter a non-sensical string such as 'asdfghjkl' in the search box.",
+      "Initiate the search."
+    ],
+    "expected_result": "Wikipedia shows a 'no results found' message or suggests similar articles."
+  },
+  {
+    "test_id": "TC_007",
+    "title": "Empty search box",
+    "steps": [
+      "Leave the search box empty.",
+      "Initiate the search."
+    ],
+    "expected_result": "No search is performed. Page remains unchanged or displays a prompt to enter a search term."
+  },
+  {
+    "test_id": "TC_008",
+    "title": "Special character handling",
+    "steps": [
+      "Enter 'Artificial Intelligence!' (with a special character) in the search box.",
+      "Initiate the search."
+    ],
+    "expected_result": "Relevant results for 'Artificial Intelligence' are displayed, special character is ignored or handled gracefully."
+  }
+]
+2026-07-16 11:18:41,852 | INFO | Starting test case generation
+2026-07-16 11:18:41,852 | INFO | Prompt created successfully
+2026-07-16 11:18:41,852 | INFO | Sending prompt to LLM
+2026-07-16 11:18:41,852 | INFO | 
+
+You are a Senior QA Architect.
+
+Analyze the requirement below.
+
+Generate detailed test cases.
+
+Requirement:
+
+
+User can search Wikipedia for Artificial Intelligence.
+
+
+Return ONLY JSON.
+
+Format:
+
+[
+ {
+   "test_id": "",
+   "title": "",
+   "steps": [],
+   "expected_result": ""
+ }
+]
+
+
+2026-07-16 11:18:52,493 | INFO | HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2026-07-16 11:18:52,569 | INFO | LLM response received
+2026-07-16 11:18:52,569 | INFO | [
+  {
+    "test_id": "TC_001",
+    "title": "Verify user can access the Wikipedia search input",
+    "steps": [
+      "Navigate to the Wikipedia homepage (https://www.wikipedia.org/)",
+      "Observe the presence of the search input field"
+    ],
+    "expected_result": "The search input field is visible and accessible on the homepage"
+  },
+  {
+    "test_id": "TC_002",
+    "title": "Verify that user can enter 'Artificial Intelligence' in the search field",
+    "steps": [
+      "Navigate to the Wikipedia homepage",
+      "Click on the search input field",
+      "Type 'Artificial Intelligence' into the input field"
+    ],
+    "expected_result": "The term 'Artificial Intelligence' is entered and displayed in the search field"
+  },
+  {
+    "test_id": "TC_003",
+    "title": "Verify that user can initiate the search action",
+    "steps": [
+      "Enter 'Artificial Intelligence' in the search input field",
+      "Press the 'Enter' key or click the search button"
+    ],
+    "expected_result": "The Wikipedia search results page is loaded"
+  },
+  {
+    "test_id": "TC_004",
+    "title": "Verify that the correct search results page is displayed for 'Artificial Intelligence'",
+    "steps": [
+      "Initiate a search for 'Artificial Intelligence' on Wikipedia",
+      "Observe the title and content of the first search result or the landing page"
+    ],
+    "expected_result": "The page for 'Artificial Intelligence' on Wikipedia is displayed"
+  },
+  {
+    "test_id": "TC_005",
+    "title": "Verify the search is case-insensitive",
+    "steps": [
+      "Enter 'artificial intelligence' (lowercase) in the Wikipedia search input",
+      "Initiate the search by pressing 'Enter' or clicking the search button"
+    ],
+    "expected_result": "The Wikipedia page for 'Artificial Intelligence' is displayed"
+  },
+  {
+    "test_id": "TC_006",
+    "title": "Verify that the search term is highlighted or referenced on the results page",
+    "steps": [
+      "Search for 'Artificial Intelligence' on Wikipedia",
+      "Observe if the term appears highlighted or referenced on the results or resulting article"
+    ],
+    "expected_result": "The term 'Artificial Intelligence' is highlighted or referenced on the result page/article"
+  },
+  {
+    "test_id": "TC_007",
+    "title": "Verify Wikipedia returns relevant suggestions while typing",
+    "steps": [
+      "Navigate to the Wikipedia homepage",
+      "Begin typing 'Artificial Intelligence' in the search field"
+    ],
+    "expected_result": "Auto-suggestions related to 'Artificial Intelligence' are displayed below the search bar"
+  },
+  {
+    "test_id": "TC_008",
+    "title": "Verify user can select an auto-suggestion for 'Artificial Intelligence'",
+    "steps": [
+      "Begin typing 'Artificial Intelligence' in the search bar",
+      "Click on the 'Artificial Intelligence' suggestion from the dropdown"
+    ],
+    "expected_result": "User is redirected to the 'Artificial Intelligence' Wikipedia article"
+  },
+  {
+    "test_id": "TC_009",
+    "title": "Verify the search results page contains a summary for 'Artificial Intelligence' article",
+    "steps": [
+      "Search for 'Artificial Intelligence' on Wikipedia",
+      "Review the top result or the article page"
+    ],
+    "expected_result": "A summary or introduction for 'Artificial Intelligence' is clearly present"
+  }
+]
+2026-07-16 11:18:52,569 | INFO | LLM response received
+2026-07-16 11:18:52,569 | INFO | Response treated as plain JSON
+2026-07-16 11:18:52,569 | INFO | JSON parsing successful. Received 9 test cases
+2026-07-16 11:18:52,569 | INFO | AI response validation successful
+2026-07-16 11:21:12,498 | INFO | Starting test case generation
+2026-07-16 11:21:12,498 | INFO | Prompt created successfully
+2026-07-16 11:21:12,498 | INFO | Sending prompt to LLM
+2026-07-16 11:21:12,498 | INFO | 
+
+You are a Senior QA Architect.
+
+Analyze the requirement below.
+
+Generate detailed test cases.
+
+Requirement:
+
+
+User should be able to search Wikipedia
+for Artificial Intelligence.
+
+
+Return ONLY JSON.
+
+Format:
+
+[
+ {
+   "test_id": "",
+   "title": "",
+   "steps": [],
+   "expected_result": ""
+ }
+]
+
+
+2026-07-16 11:21:16,408 | INFO | HTTP Request: POST https://api.openai.com/v1/responses "HTTP/1.1 200 OK"
+2026-07-16 11:21:16,488 | INFO | LLM response received
+2026-07-16 11:21:16,488 | INFO | [
+  {
+    "test_id": "TC_WIKI_SEARCH_001",
+    "title": "Verify Wikipedia search functionality with valid keyword 'Artificial Intelligence'",
+    "steps": [
+      "Navigate to the Wikipedia homepage.",
+      "Locate the search input field.",
+      "Enter the keyword 'Artificial Intelligence' into the search field.",
+      "Click the search button or press the Enter key."
+    ],
+    "expected_result": "User is directed to the Wikipedia page for 'Artificial Intelligence', or the relevant search results page with 'Artificial Intelligence' as the top result."
+  },
+  {
+    "test_id": "TC_WIKI_SEARCH_002",
+    "title": "Verify search suggestions for 'Artificial Intelligence'",
+    "steps": [
+      "Navigate to the Wikipedia homepage.",
+      "Click into the search input field.",
+      "Begin typing 'Artificial Intelligence'."
+    ],
+    "expected_result": "Autocomplete suggestions related to 'Artificial Intelligence' are displayed beneath the search box."
+  },
+  {
+    "test_id": "TC_WIKI_SEARCH_003",
+    "title": "Verify result page structure after searching for 'Artificial Intelligence'",
+    "steps": [
+      "Search for 'Artificial Intelligence' on Wikipedia.",
+      "Review the resulting page for content and structure."
+    ],
+    "expected_result": "The resulting page includes a relevant summary, table of contents, and main body content about 'Artificial Intelligence.'"
+  },
+  {
+    "test_id": "TC_WIKI_SEARCH_004",
+    "title": "Verify URL after searching for 'Artificial Intelligence'",
+    "steps": [
+      "Search for 'Artificial Intelligence' on Wikipedia.",
+      "Observe the browser’s address bar."
+    ],
+    "expected_result": "The URL reflects the Wikipedia page for 'Artificial Intelligence' (e.g., ends with /wiki/Artificial_intelligence)."
+  },
+  {
+    "test_id": "TC_WIKI_SEARCH_005",
+    "title": "Verify handling of leading/trailing spaces in search for 'Artificial Intelligence'",
+    "steps": [
+      "Enter '   Artificial Intelligence   ' (with leading and trailing spaces) in the Wikipedia search field.",
+      "Initiate the search."
+    ],
+    "expected_result": "Wikipedia trims spaces and returns the expected results for 'Artificial Intelligence'."
+  }
+]
+2026-07-16 11:21:16,488 | INFO | LLM response received
+2026-07-16 11:21:16,488 | INFO | Response treated as plain JSON
+2026-07-16 11:21:16,488 | INFO | JSON parsing successful. Received 5 test cases
+2026-07-16 11:21:16,488 | INFO | AI response validation successful
