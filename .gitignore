@@ -1,7 +1,26 @@
-.venv/
+# Python
 __pycache__/
-*.pyc
-playwright-report/
-test-results/
-screenshots/*.png
+*.py[cod]
+*.pyo
+
+# Virtual environment
+.venv/
+venv/
+
+# Environment variables
 .env
+
+# Logs
+logs/
+
+# Screenshots
+screenshots/
+
+# Pytest
+.pytest_cache/
+
+# VS Code
+.vscode/
+
+# Mac
+.DS_Store
