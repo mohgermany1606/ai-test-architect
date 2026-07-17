@@ -1,46 +1,50 @@
 from unittest.mock import patch
-
+from src.ai.schemas.test_case import TestCase
 from src.agents.execution_agent import execution_agent
-
 
 
 def test_execution_agent():
 
-
     state = {
 
-        "requirement": "Search Wikipedia",
+    "test_cases": [
 
-        "plan": [],
+        TestCase(
+            test_id="TC001",
+            title="Open Wikipedia",
+            steps=[
+                "Open Wikipedia"
+            ],
+            expected_result="Wikipedia opens"
+        )
 
-        "test_cases": [],
+    ],
 
-        "execution_status": "",
+    "execution_status": "",
 
-        "execution_result": "",
+    "execution_result": "",
 
-        "screenshots": []
+    "screenshots": []
 
-    }
+}
 
 
     with patch(
-        "src.agents.execution_agent.Browser"
-    ) as mock_browser:
+        "src.agents.execution_agent.execute_action"
+    ) as mock_execute:
 
 
-        mock_page = mock_browser.return_value.__enter__.return_value
-
-
-        result = execution_agent(state)
-
-
-        assert (
-            result["execution_status"]
-            == "PASSED"
+        result = execution_agent(
+            state
         )
 
 
-        assert len(
-            result["screenshots"]
-        ) == 1
+    assert result["execution_status"] == "PASSED"
+
+    assert (
+        result["execution_result"]
+        ==
+        "Test executed successfully"
+    )
+
+    assert len(result["screenshots"]) == 1

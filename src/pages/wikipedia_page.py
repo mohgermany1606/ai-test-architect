@@ -1,7 +1,10 @@
 class WikipediaPage:
 
 
-    def __init__(self, page):
+    def __init__(
+        self,
+        page
+    ):
 
         self.page = page
 
@@ -9,28 +12,35 @@ class WikipediaPage:
     def open(self):
 
         self.page.goto(
-            "https://wikipedia.org"
+            "https://www.wikipedia.org"
         )
 
 
-    def search(self, text):
+    def search(
+        self,
+        text
+    ):
 
-        self.page.locator(
+        search_box = self.page.locator(
             "input[name='search']"
-        ).fill(text)
+        )
+
+
+        search_box.fill(
+            text
+        )
+
 
         self.page.keyboard.press(
             "Enter"
         )
 
 
-    def open_article(self):
+    def verify_article(self):
 
-        self.page.wait_for_load_state(
-        "networkidle"
-        )
+        article = self.page.get_by_text(
+            "Artificial intelligence"
+        ).first
 
-        self.page.get_by_role(
-        "link",
-        name="Artificial intelligence"
-        ).first.click()
+
+        assert article.is_visible()

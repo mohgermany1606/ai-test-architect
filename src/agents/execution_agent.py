@@ -1,16 +1,18 @@
 from src.agents.state import AgentState
-from src.tools.browser_tool import browser_tool
+from src.agents.action_executor import execute_action
 from src.browser import Browser
-from src.tools.tool_router import execute_tool
+
 
 
 def execution_agent(
     state: AgentState
 ) -> AgentState:
 
+
     try:
 
         with Browser() as page:
+
 
             test_case = state["test_cases"][0]
 
@@ -22,7 +24,7 @@ def execution_agent(
                     step
                 )
 
-                execute_tool(
+                execute_action(
                     page,
                     step
                 )
@@ -53,10 +55,12 @@ def execution_agent(
 
     except Exception as error:
 
+
         print(
             "EXECUTION ERROR:",
             error
         )
+
 
         state["execution_status"] = "FAILED"
 
