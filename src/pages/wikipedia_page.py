@@ -1,6 +1,8 @@
 class WikipediaPage:
 
-    def __init__(self,page):
+
+    def __init__(self, page):
+
         self.page = page
 
 
@@ -11,17 +13,24 @@ class WikipediaPage:
         )
 
 
-    def search(self,keyword):
+    def search(self, text):
 
         self.page.locator(
             "input[name='search']"
-        ).fill(keyword)
+        ).fill(text)
 
-        self.page.keyboard.press("Enter")
+        self.page.keyboard.press(
+            "Enter"
+        )
 
 
-    def verify_article(self):
+    def open_article(self):
 
-        self.page.locator(
-            "#firstHeading"
-        ).wait_for()
+        self.page.wait_for_load_state(
+        "networkidle"
+        )
+
+        self.page.get_by_role(
+        "link",
+        name="Artificial intelligence"
+        ).first.click()
