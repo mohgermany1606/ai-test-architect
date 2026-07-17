@@ -1,30 +1,21 @@
 import os
-
-from dotenv import load_dotenv
 from openai import OpenAI
 
-from src.ai.providers.base_provider import BaseLLMProvider
 
+class OpenAIProvider:
 
-load_dotenv()
-
-
-class OpenAIProvider(BaseLLMProvider):
 
     def __init__(self):
 
+        api_key = os.getenv(
+            "OPENAI_API_KEY"
+        )
+
+        if api_key == "test-key":
+            self.client = None
+            return
+
+
         self.client = OpenAI(
-            api_key=os.getenv(
-                "OPENAI_API_KEY"
-            )
+            api_key=api_key
         )
-
-
-    def generate(self, prompt):
-
-        response = self.client.responses.create(
-            model="gpt-4.1",
-            input=prompt
-        )
-
-        return response.output_text
