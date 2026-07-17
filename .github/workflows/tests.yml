@@ -36,8 +36,5 @@ jobs:
           playwright install chromium
 
       - name: Run Tests
-        env: 
-         CI: |
-          true
         run: |
-          pytest
+          pytest -p no:anyio

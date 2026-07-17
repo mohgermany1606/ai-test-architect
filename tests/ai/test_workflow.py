@@ -24,7 +24,12 @@ def test_workflow_execution():
     }
 
 
-    result = app.invoke(state)
+    result = app.invoke(
+    state,
+    config={
+        "recursion_limit": 10
+      }
+    )
 
 
     assert len(result["plan"]) > 0

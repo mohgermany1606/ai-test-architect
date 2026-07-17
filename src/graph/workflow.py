@@ -85,4 +85,6 @@ def create_workflow():
     )
 
 
-    return workflow.compile()
+    return workflow.compile(
+    debug=False
+    )

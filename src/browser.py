@@ -1,9 +1,7 @@
 from playwright.sync_api import sync_playwright
-import os
 
 
 class Browser:
-
 
     def __init__(self):
         self.playwright = None
@@ -14,23 +12,13 @@ class Browser:
 
         self.playwright = sync_playwright().start()
 
-
-        headless = os.getenv(
-            "CI",
-            "false"
-        ) == "true"
-
-
         self.browser = self.playwright.chromium.launch(
-            headless=headless
+            headless=True
         )
-
 
         self.page = self.browser.new_page()
 
-
         return self.page
-
 
 
     def __exit__(
