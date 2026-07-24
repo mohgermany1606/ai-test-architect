@@ -197,7 +197,6 @@ Generate Report
 
 ## 📸 Screenshots
 
-*(Add screenshots after execution.)*
 
 Example:
 
